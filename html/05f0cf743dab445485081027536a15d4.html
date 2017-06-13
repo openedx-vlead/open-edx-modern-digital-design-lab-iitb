@@ -1,0 +1,56 @@
+<h2 style="color: red;"><strong style="text-decoration: underline;"><span style="font-family: arial,helvetica,sans-serif; color: #ff0000;"><span style="font-size: large;">Review Questions</span></span></strong></h2>
+<p></p>
+<pre>Half-adder:-
+module half_adder (x, y, out_sum, out_carry);
+input  x;
+input  y;
+output out_sum;
+output out_carry;
+
+assign out_sum = x^y;
+assign out_carry = x&amp;y;
+
+endmodule 
+<br />
+Full-adder:
+module full_adder(x, y, carry_in, sum_out, carry_out);
+
+input  x; 
+input  y;
+input  carry_in;
+output sum_out;
+output carry_out;
+
+wire w_sum1;
+wire w_carry1;
+wire w_carry2;
+
+assign carry_out = w_carry1 | w_carry2;
+
+half_adder u1_half_adder(.x(x), .y(y), .out_sum(w_sum1), .out_carry(w_carry1));                    
+half_adder u2_half_adder(.x(w_sum1), .y(carry_in), .out_sum(sum_out), .out_carry(w_carry2));               
+
+endmodule 
+<br />
+8-bit adder:-
+module adder_8bit (input [7:0] IN1,IN2,input CIN, output [7:0] SUM, output CY,AC);
+  
+  wire c0,c1,c2,c4,c5,c6;
+  
+  full_adder inst1(.x(IN1[0]),.y(IN2[0]),.sum_out(SUM[0]),.carry_in(0),.carry_out(c0));
+  
+  full_adder inst2(.x(IN1[1]),.y(IN2[1]),.sum_out(SUM[1]),.carry_in(c0),.carry_out(c1));  
+  
+  full_adder inst3(.x(IN1[2]),.y(IN2[2]),.sum_out(SUM[2]),.carry_in(c1),.carry_out(c2));
+  
+  full_adder inst4(.x(IN1[3]),.y(IN2[3]),.sum_out(SUM[3]),.carry_in(c2),.carry_out(AC));
+  
+  full_adder inst5(.x(IN1[4]),.y(IN2[4]),.sum_out(SUM[4]),.carry_in(AC),.carry_out(c4));
+  
+  full_adder inst6(.x(IN1[5]),.y(IN2[5]),.sum_out(SUM[5]),.carry_in(c4),.carry_out(c5));
+
+  full_adder inst7(.x(IN1[6]),.y(IN2[6]),.sum_out(SUM[6]),.carry_in(c5),.carry_out(c6));
+      
+  full_adder inst8(.x(IN1[7]),.y(IN2[7]),.sum_out(SUM[7]),.carry_in(c6),.carry_out(CY));
+        
+endmodule</pre>

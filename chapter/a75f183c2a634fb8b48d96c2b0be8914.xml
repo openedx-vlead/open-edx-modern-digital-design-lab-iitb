@@ -1,0 +1,6 @@
+<chapter display_name="To Design, implement and Simulate 8-bit full adder.        Objective:-                 1. Understanding moduler structual design of any bit adder using half adder and full adder modules.           2. Using the above half adder design a full adder such that 2 bits are added along with previous carry and results are given as sum and carry.              3. Design a structural 8 bit full adder using the above 1 bit full adder">
+  <sequential url_name="a56ced80dacd43df965b35ecab718eba"/>
+  <sequential url_name="069e34ebb7934bc9a70221ad72d4b9c2"/>
+  <sequential url_name="395f00820750490188b122693325c7c4"/>
+  <sequential url_name="d9fa79c77fa6440796b1a7d93ce89acf"/>
+</chapter>
