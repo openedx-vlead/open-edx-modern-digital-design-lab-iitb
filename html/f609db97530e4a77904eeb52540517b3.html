@@ -1,0 +1,26 @@
+<h2 style="color: red;"><strong style="text-decoration: underline;"><span style="font-family: arial,helvetica,sans-serif; color: #ff0000;"><span style="font-size: large;">Review Questions</span></span></strong></h2>
+<p></p>
+<pre>module comparator(a, b, a_lt_b, a_eq_b, a_gt_b);
+input [3:0] a,b;
+output a_lt_b, a_eq_b, a_gt_b;
+reg a_lt_b, a_eq_b, a_gt_b;
+always @(a,b) begin
+if (a[3] ^ b[3]) begin
+a_eq_b=1&rsquo;b0; a_lt_b=b[3]; a_gt_b=a[3];
+end
+else if (a[2] ^ b[2]) begin
+a_eq_b=1&rsquo;b0; a_lt_b=b[2]; a_gt_b=a[2];
+end
+else if (a[1] ^ b[1]) begin
+a_eq_b=1&rsquo;b0; a_lt_b=b[1]; a_gt_b=a[1];
+end
+else if (a[0] ^ b[0]) begin
+a_eq_b=1&rsquo;b0; a_lt_b=b[0]; a_gt_b=a[0];
+end
+else begin
+a_eq_b=1&rsquo;b1; a_lt_b=1&rsquo;b0; a_gt_b=1&rsquo;b0;
+end
+end
+endmodule
+</pre>
+<p><strong style="text-decoration: underline;"><span style="font-family: arial,helvetica,sans-serif; color: #ff0000;"><span style="font-size: large;"></span></span></strong></p>

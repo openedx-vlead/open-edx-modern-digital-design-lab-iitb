@@ -1,5 +1,6 @@
 {
     "course/course": {
+        "advertised_start": "Anytime", 
         "cert_html_view_enabled": true, 
         "discussion_topics": {
             "General": {
@@ -7,8 +8,12 @@
             }
         }, 
         "display_name": "Modern Digital Design Lab", 
+        "instructor_info": {
+            "instructors": []
+        }, 
         "language": "en", 
-        "start": "2030-01-01T00:00:00Z", 
+        "learning_info": [], 
+        "start": "2017-05-05T00:00:00Z", 
         "tabs": [
             {
                 "name": "Home", 

@@ -1,0 +1,78 @@
+<h2 style="color: red;"><strong style="text-decoration: underline;"><span style="font-family: arial,helvetica,sans-serif; color: #ff0000;"><span style="font-size: large;">Review Questions</span></span></strong></h2>
+<p></p>
+<pre> SR-FF
+module srff(q,q1,r,s,clk);
+	output q,q1;
+	input r,s,clk;
+	reg q,q1;
+	initial
+	begin
+		q=1'b0;
+		q1=1'b1;
+	end
+	always @(posedge clk)
+	  begin
+	  case({s,r})
+		 {1'b0,1'b0}: begin q=q; q1=q1; end
+		 {1'b0,1'b1}: begin q=1'b0; q1=1'b1; end
+		 {1'b1,1'b0}: begin q=1'b1; q1=1'b0; end
+		 {1'b1,1'b1}: begin q=1'bx; q=1'bx; end
+	endcase
+	end
+endmodule
+
+ JK-FF
+module jk(q,q1,j,k,c);
+output q,q1;
+input j,k,c;
+reg q,q1;
+initial begin q=1'b0; q1=1'b1; end
+always @ (posedge c)
+  begin
+	case({j,k})
+		 {1'b0,1'b0}:begin q=q; q1=q1; end
+		 {1'b0,1'b1}: begin q=1'b0; q1=1'b1; end
+		 {1'b1,1'b0}:begin q=1'b1; q1=1'b0; end
+		 {1'b1,1'b1}: begin q=~q; q1=~q1; end
+	endcase
+   end
+endmodule
+
+ D-FF
+module dff(q,q1,d,c);
+output q,q1;
+ input d,c;
+ reg q,q1;
+	initial 
+	   begin
+		   q=1'b0; q1=1'b1;
+	  end
+	always @ (posedge c)
+	   begin 
+		 q=d;
+		 q1= ~d;
+	   end
+endmodule
+
+ T-FF
+module tff(q,q1,t,c);
+output q,q1;
+input t,c;
+reg q,q1;
+initial 
+   begin 
+	q=1'b1;
+	q1=1'b0;
+   end
+ always @ (c)
+	begin
+		if(c)
+			 begin
+			   if (t==1'b0) begin q=q; q1=q1; end
+			   else begin q=~q; q1=~q1; end
+			 end
+	 end
+endmodule
+</pre>
+<p></p>
+<p><strong style="text-decoration: underline;"><span style="font-family: arial,helvetica,sans-serif; color: #ff0000;"><span style="font-size: large;"></span></span></strong></p>

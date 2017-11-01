@@ -1,0 +1,31 @@
+<h2 style="color: red;"><strong style="text-decoration: underline;"><span style="font-family: arial,helvetica,sans-serif; color: #ff0000;"><span style="font-size: large;">Review Questions</span></span></strong></h2>
+<p></p>
+<pre>module dff(q,d,c);
+output q;
+input d,c;
+reg q;
+initial   
+q=1'b1; 
+always @ (posedge c)
+q=d;
+endmodule
+
+module dff1(q,d,clk);
+output q;
+input d,clk;
+reg q;
+initial 
+q=1'b0;
+always @ (posedge clk)
+q=d;
+endmodule
+
+module ring(q,clk);
+inout [3:0]q;
+input clk;
+dff u1(q[0],q[3],clk);
+dff1 u2(q[1],q[0],clk);
+dff1 u3(q[2],q[1],clk);
+dff1 u4(q[3],q[2],clk);
+endmodule</pre>
+<p><strong style="text-decoration: underline;"><span style="font-family: arial,helvetica,sans-serif; color: #ff0000;"><span style="font-size: large;"></span></span></strong></p>

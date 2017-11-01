@@ -1,0 +1,16 @@
+<h2 style="color: red;"><strong style="text-decoration: underline;"><span style="font-family: arial,helvetica,sans-serif; color: #ff0000;"><span style="font-size: large;">Review Questions</span></span></strong></h2>
+<pre>module decoder(A, B, C,out);
+        input A, B, C;
+        output reg [7:0] out;
+	always@(*)
+	begin
+		out[0] &lt;= (!A) &amp;&amp; (!B) &amp;&amp; (!C);
+		out[1] &lt;= (!A) &amp;&amp; (!B) &amp;&amp; (C);
+		out[2] &lt;= (!A) &amp;&amp; (B) &amp;&amp; (!C);
+		out[3] &lt;= (!A) &amp;&amp; (B) &amp;&amp; (C);
+		out[4] &lt;= (A) &amp;&amp; (!B) &amp;&amp; (!C);
+		out[5] &lt;= (A) &amp;&amp; (!B) &amp;&amp; (C);
+		out[6] &lt;= (A) &amp;&amp; (B) &amp;&amp; (!C);
+		out[7] &lt;= (A) &amp;&amp; (B) &amp;&amp; (C);
+	end
+endmodule </pre>

@@ -1,0 +1,50 @@
+<h2 style="color: red;"><strong style="text-decoration: underline;"><span style="font-family: arial,helvetica,sans-serif; color: #ff0000;"><span style="font-size: large;">Review Questions</span></span></strong></h2>
+<p></p>
+<pre>module moore_101_detector (w, rst, clk, y );
+input w, rst, clk;
+output y; reg y;
+parameter [1:0] stRESET = 0, stGOT1 = 1,stGOT10 = 2, stGOT101 = 3;
+reg [1:0] state;
+
+	always @ ( posedge clk ) begin
+	if (rst) 
+	state &lt;= stRESET;
+		else begin
+			case ( state )
+				stRESET: begin
+					if ( w==1'b1 ) state &lt;= stGOT1 ;
+					else state &lt;= stRESET;
+					end
+				stGOT1: begin
+					if ( w==1'b0 ) state &lt;= stGOT10;
+					else state &lt;= stGOT1;
+					end
+				stGOT10: begin
+					if ( w==1'b1 ) state &lt;= stGOT101;
+					else state &lt;= stRESET;
+					end
+				stGOT101: begin
+					if ( w==1'b1 ) state &lt;= stGOT1;
+					else state &lt;= stGOT10;
+				end
+				default: state &lt;= stRESET;
+	// Only for illegal input ( ?? )
+	// Legal inputs would not bring FSM here.
+			endcase
+		end
+	end
+// Moore output logic
+// ( combinational function of just "state" )
+	always @( * ) begin
+		case ( state )
+			stRESET : y = 0;
+			stGOT1 : y = 0;
+			stGOT10 : y = 0;
+			stGOT101 : y = 1;
+			default : y = 0;
+		endcase
+	end
+endmodule
+</pre>
+<p></p>
+<p><strong style="text-decoration: underline;"><span style="font-family: arial,helvetica,sans-serif; color: #ff0000;"><span style="font-size: large;"></span></span></strong></p>
