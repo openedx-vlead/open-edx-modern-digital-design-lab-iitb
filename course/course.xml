@@ -1,4 +1,4 @@
-<course advertised_start="Anytime" cert_html_view_enabled="true" display_name="Modern Digital Design Lab" instructor_info="{&quot;instructors&quot;: []}" language="en" learning_info="[]" start="&quot;2017-05-05T00:00:00+00:00&quot;">
+<course advertised_start="Anytime" cert_html_view_enabled="true" course_image="digital-985408_1920.jpg" display_name="Modern Digital Design Lab" instructor_info="{&quot;instructors&quot;: []}" language="en" learning_info="[]" start="&quot;2017-05-05T00:00:00+00:00&quot;">
   <chapter url_name="81803dba7f1940918500b28e58eb8396"/>
   <chapter url_name="a75f183c2a634fb8b48d96c2b0be8914"/>
   <chapter url_name="07e3249b5dc54e4ab13a7f3a0d0d371d"/>
@@ -9,5 +9,6 @@
   <chapter url_name="77fa36b787a449dba91c0c8f7da08c19"/>
   <chapter url_name="57abc04e4a9e4408a6c4af5a472d1996"/>
   <chapter url_name="b4f10be0e19f4a5fa45aa408a6e94427"/>
+  <chapter url_name="016e85080ca54a53a4d7f5f29af5cf46"/>
   <wiki slug="IIT-Bombay.MDDL-IITB.Anytime"/>
 </course>
