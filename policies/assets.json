@@ -3,7 +3,7 @@
         "contentType": "image/jpeg", 
         "content_son": {
             "category": "asset", 
-            "course": "MDDL-IITB", 
+            "course": "ece43", 
             "name": "digital-985408_1920.jpg", 
             "org": "IIT-Bombay", 
             "revision": null, 
@@ -11,13 +11,13 @@
             "tag": "c4x"
         }, 
         "displayname": "digital-985408_1920.jpg", 
-        "filename": "asset-v1:IIT-Bombay+MDDL-IITB+Anytime+type@asset+block@digital-985408_1920.jpg", 
-        "import_path": null, 
+        "filename": "asset-v1:IIT-Bombay+ece43+Anytime+type@asset+block@digital-985408_1920.jpg", 
+        "import_path": "digital-985408_1920.jpg", 
         "locked": false, 
         "thumbnail_location": [
             "c4x", 
             "IIT-Bombay", 
-            "MDDL-IITB", 
+            "ece43", 
             "thumbnail", 
             "digital-985408_1920.jpg", 
             null
